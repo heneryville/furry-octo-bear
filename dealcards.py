@@ -7,7 +7,7 @@ def generateNewDeck():
         cardsHearts=[i+40 for i in range(13)]
         cardsFullDeck=cardsSpades+cardsClubs+cardsDiamonds+cardsHearts
         random.shuffle(cardsFullDeck)
-        return currentDeck
+        return cardsFullDeck
 
 def dealTopCard(currentDeck):
         cardSuit=""
@@ -23,35 +23,36 @@ def dealTopCard(currentDeck):
                 cardSuit="Diamomds"
                 cardValue=currentDeck[0]-26
         else:
-                suit="Hearts"
+                cardSuit="Hearts"
                 cardValue=currentDeck[0]-39
         if cardValue==1:
                 cardFaceValue=="Ace"
-        elif currentDeck[0]==2:
+        elif cardValue==2:
                 cardFaceValue=="Two"
-        elif currentDeck[0]==11:
+        elif cardValue==3:
                 cardFaceValue=="Three"
-        elif currentDeck[0]==11:
+        elif cardValue==4:
                 cardFaceValue=="Four"
-        elif currentDeck[0]==11:
+        elif cardValue==5:
                 cardFaceValue=="Five"
-        elif currentDeck[0]==11:
+        elif cardValue==6:
                 cardFaceValue=="Six"
-        elif currentDeck[0]==11:
+        elif cardValue==7:
                 cardFaceValue=="Seven"
-        elif currentDeck[0]==11:
+        elif cardValue==8:
                 cardFaceValue=="Eight"
-        elif currentDeck[0]==11:
+        elif cardValue==9:
                 cardFaceValue=="Nine"
-        elif currentDeck[0]==11:
+        elif cardValue==10:
                 cardFaceValue=="Ten"
-        elif currentDeck[0]==11:
+        elif cardValue==11:
                 cardFaceValue=="Jack"       
-        elif currentDeck[0]==12:
+        elif cardValue==12:
                 cardFaceValue=="Queen"    
-        elif currentDeck[0]==13:
+        elif cardValue==13:
                 cardFaceValue=="King"
-        print cardFaceValue+" of " + suit
+        print cardFaceValue+" of " + cardSuit
+        print cardFaceValue, cardValue
         copyDeck=[]
         for i in range (1, len(currentDeck)):
                 copyDeck.append(currentDeck[i])

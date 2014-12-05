@@ -1,0 +1,64 @@
+import random
+def generateNewDeck():
+        deckBase=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+        cardsSpades=deckBase
+        cardsClubs=[i+14 for i in range (13)]
+        cardsDiamonds=[i+27 for i in range (13)]
+        cardsHearts=[i+40 for i in range(13)]
+        cardsFullDeck=cardsSpades+cardsClubs+cardsDiamonds+cardsHearts
+        random.shuffle(cardsFullDeck)
+        return currentDeck
+
+def dealTopCard(currentDeck):
+        cardSuit=""
+        cardFaceValue=""
+        cardValue=0
+        if currentDeck[0]<14:
+                cardSuit="Spades"
+                cardValue=currentDeck[0]
+        elif currentDeck[0]>13 and currentDeck[0]<27:
+                cardSuit="Clubs"
+                cardValue=currentDeck[0]-13
+        elif currentDeck[0]>26 and currentDeck[0]<40:
+                cardSuit="Diamomds"
+                cardValue=currentDeck[0]-26
+        else:
+                suit="Hearts"
+                cardValue=currentDeck[0]-39
+        if cardValue==1:
+                cardFaceValue=="Ace"
+        elif currentDeck[0]==2:
+                cardFaceValue=="Two"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Three"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Four"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Five"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Six"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Seven"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Eight"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Nine"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Ten"
+        elif currentDeck[0]==11:
+                cardFaceValue=="Jack"       
+        elif currentDeck[0]==12:
+                cardFaceValue=="Queen"    
+        elif currentDeck[0]==13:
+                cardFaceValue=="King"
+        print cardFaceValue+" of " + suit
+        copyDeck=[]
+        for i in range (1, len(currentDeck)):
+                copyDeck.append(currentDeck[i])
+        return copyDeck
+
+currentDeck=generateNewDeck()
+numberOfCards=int(raw_input("Number of cards to deal? "))
+for i in range(0,numberOfCards):
+        currentDeck=dealTopCard(currentDeck)
+        
